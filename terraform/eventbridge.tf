@@ -65,7 +65,7 @@ resource "aws_cloudwatch_event_rule" "weekly_bill" {
 resource "aws_cloudwatch_event_rule" "mid_month_forecast" {
   name                = "costgopher-mid-month-forecast"
   description         = "Trigger mid-month cost forecast on the 15th at 9am UTC"
-  schedule_expression = "cron(0 9 15 * *)"
+  schedule_expression = "cron(0 9 15 * ? *)"
 
   tags = {
     Name = "costgopher-mid-month-forecast"
